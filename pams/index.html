@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>calc</title>
+	</head>
+
+
+<body>
+
+	<body>
+	
+<input type="number" placeholder="0" id="ndisplay">
+<br>
+<br>
+
+<button onclick="Input(this)">1</button>
+<button onclick="Input(this)">2</button>
+<button onclick="Input(this)">3</button>
+<button onclick="Input(this)">4</button>
+<button onclick="Input(this)">5</button>
+</br>
+<button onclick="Input(this)">6</button>
+<button onclick="Input(this)">7</button>
+<button onclick="Input(this)">8</button>
+<button onclick="Input(this)">9</button>
+<button id="nequals" onclick="result()">=</button>
+</br>
+<button id="nplus" onclick="ADD()">+</button>
+<button id="nminus" onclick="SUBTRACT()">-</button>
+<button id="nmultiply" onclick="MULTIPLY()">*</button>
+<button id="nmodulo" onclick="MODULO()">/</button>
+
+
+<script type="text/javascript">
+	let cal = document.getElementById('ndisplay');
+	let numberHolder;
+	let optr;
+
+	function Input(e){
+		cal.value += e.innerHTML;
+	}
+
+	function ADD(){
+		optr = "+";
+		numberHolder = parseInt(cal.value);
+		cal.value = "";
+	}
+
+	function SUBTRACT(){
+		optr = "-";
+		numberHolder = parseInt(cal.value);
+		cal.value = "";
+	}
+
+	function MULTIPLY(){
+		optr = "*";
+		numberHolder = parseInt(cal.value);
+		cal.value = "";
+	}
+
+	function MODULO(){
+		optr = "/";
+		numberHolder = parseInt(cal.value);
+		cal.value = "";
+	}
+	function result(){
+		switch (optr){
+			case "+":
+					cal.value = numberHolder + parseInt(cal.value);
+					break;
+			case "-":
+					cal.value = numberHolder - parseInt(cal.value);
+					break;	
+			case "*":
+					cal.value = numberHolder * parseInt(cal.value);
+					break;	
+			case "%":
+					cal.value = numberHolder / parseInt(cal.value);
+					break;
+
+			default:
+				console.log('no operator defined');
+				break;				
+		}
+
+
+	}
+
+
+</script>
+</body>
+	</body>
+</html>
